@@ -30,12 +30,23 @@ main{
     width: 100%;
 }
 .cartao-interno{
-    position: relative;
+       position: relative;
+       transition: transform 0.8s;
+       transform: preserve-3d;
 }
-        .cartao-mentira, .crtao-verso{
+ .cartao-mentira, .crtao-verso{
              position: absolute;
              border-radius: 12px;
-             box-shadow: 0 6px 12px (0,0,0,0.15);
-     
-        }
-
+             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+             backface-visibility: hidden;
+}
+.crtao-verso{
+    transform: rotateY(180deg);
+}
+.cartao:hover.cartao-interno{
+    transform: rotateY(180deg);
+}
+section{
+    display: flex;
+    gap: 16xp;
+}
